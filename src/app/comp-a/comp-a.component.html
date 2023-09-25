@@ -1,0 +1,14 @@
+<div class="photo-container">
+    <app-photo 
+        *ngFor="let imgsrc of img_list"
+        [imgsrc]="imgsrc"
+        (click)="open(content, imgsrc)">
+    </app-photo>
+</div>
+
+<ng-template #content let-modal>
+	<div>
+        <img [src]="chosen_image" style="position: absolute;">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="position: absolute"></button>
+	</div>
+</ng-template>

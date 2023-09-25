@@ -1,0 +1,11 @@
+.grid-photo {
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.grid-photo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.596);
+  }
