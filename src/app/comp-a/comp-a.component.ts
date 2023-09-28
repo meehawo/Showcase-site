@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-comp-a',
   templateUrl: './comp-a.component.html',
-  styleUrls: ['./comp-a.component.css']
+  styleUrls: ['./comp-a.component.css'],
+  providers: [NgbModalConfig, NgbModal],
 })
 
 export class CompAComponent implements OnInit{
   img_list: string[];
   chosen_image: string;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+    config.centered = true;
+    config.size = 'lg'
+  }
 
   ngOnInit() {
     this.img_list = []
@@ -24,7 +28,7 @@ export class CompAComponent implements OnInit{
   }
 
   open(content: any, choice: string) {
-		this.modalService.open(content, { size: 'xl' });
+		this.modalService.open(content);
     this.chosen_image = choice;
 	}
 }

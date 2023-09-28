@@ -6,9 +6,10 @@
     </app-photo>
 </div>
 
-<ng-template #content let-modal>
-	<div>
-        <img [src]="chosen_image" style="position: absolute;">
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="position: absolute"></button>
+<ng-template #content let-modal >
+	<div class="modal-body" style="padding: 0%;">
+        <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" style="position: absolute; --bs-btn-close-focus-shadow: none"></button>
+        <img [src]="chosen_image" style="width: 100%;">
 	</div>
 </ng-template>
+
